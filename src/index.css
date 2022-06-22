@@ -20,7 +20,6 @@ main {
 }
 
 h1 {
-  
   text-align: center;
   font-size: 4rem;
   font-weight: bold;
@@ -28,9 +27,11 @@ h1 {
   border-bottom: 3px solid #0000001c;
   padding-bottom: 1rem;
 }
-h1>span:nth-child(1){
+
+h1>span:nth-child(1) {
   font-weight: bold;
 }
+
 h1>span:nth-child(2) {
   font-family: 'Montserrat', sans-serif;
   display: block;
@@ -61,7 +62,7 @@ input {
   font-size: 1.5rem;
 }
 
-.no-results, 
+.no-results,
 .loading {
   margin-top: 2rem;
   display: block;
@@ -73,11 +74,13 @@ input {
   align-items: center;
   font-family: 'Montserrat', sans-serif;
 }
-main > .loading {
+
+main>.loading {
   animation: fadeIn .5s linear infinite alternate;
   color: slateblue;
 }
-.pokemon{
+
+.pokemon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,17 +95,19 @@ main > .loading {
   animation: fadeInUp .3s ease-in;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
 }
-.pokemon > h3 {
+
+.pokemon>h3 {
   font-size: 2rem;
 }
 
-.pokemon > img {
+.pokemon>img {
   height: 200px;
   width: 200px;
   vertical-align: top;
   object-fit: cover;
 }
-.pokemon::before{
+
+.pokemon::before {
   content: "";
   width: 100%;
   height: 100%;
@@ -113,6 +118,7 @@ main > .loading {
   top: 0;
   z-index: -1;
 }
+
 @keyframes swing {
   20% {
     transform: rotate3d(0, 0, 1, 15deg);
@@ -134,6 +140,7 @@ main > .loading {
     transform: rotate3d(0, 0, 1, 0deg);
   }
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -143,6 +150,7 @@ main > .loading {
     opacity: 1;
   }
 }
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -153,4 +161,34 @@ main > .loading {
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }
+}
+
+@media screen and (max-width: 600px) {
+
+  h1 {
+    font-size: 3rem;
+    line-height: normal;
+  }
+
+  main {
+    display: block;
+    max-width: 1000px;
+    width: 95%;
+    margin: 1em auto;
+    min-height: 70vh;
+  }
+
+  .pokemon {
+    width: 100%;
+    flex-direction: column;
+    border: 1px solid black;
+    gap: 0;
+  }
+
+.pokemon::before {
+  right: 0;
+  left: auto;
+  top: auto;
+  bottom: -150px;
+}
 }
