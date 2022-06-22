@@ -5,11 +5,14 @@ export const searchPokemon = async (pokemon: string, signal?: AbortSignal): Prom
         
         const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`
         const res = await fetch(url, { signal });
+        
+        if(res.status === 404) return null
+
         const data: ResponseAPI = await res.json();
-        return data ? data: null
+        return data
 
     } catch (error) {
-        console.log(error)
+        console.log((error as Error).message);
         return null
     }
 }

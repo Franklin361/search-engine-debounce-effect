@@ -1,6 +1,9 @@
 import { ResponseAPI } from "../interface/pokemon"
 
 export const Pokemon = ({ pokemon }: { pokemon: ResponseAPI | null }) => {
+  
+  if(pokemon && Object.keys(pokemon).length === 0) return <></>;
+  
   return (
     <>
       {
