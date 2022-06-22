@@ -2,9 +2,10 @@ import { Form } from "./components/Form"
 import { useEffect, useState } from 'react';
 import { searchPokemon } from "./utils/searchPokemon";
 import { ResponseAPI } from "./interface/pokemon";
+import { Pokemon } from "./components/Pokemon";
 
 const delay = 1000; // 1s
-const controller = new AbortController();
+
 const App = () => {
 
   const [pokemon, setPokemon] = useState<ResponseAPI | null>(null)
@@ -22,9 +23,12 @@ const App = () => {
   }, [value, delay]);
 
   useEffect(() => {
+    const controller = new AbortController();
     if (debouncedValue) {
       searchPokemon(debouncedValue, controller.signal)
-        .then(data => setPokemon(data))
+        .then(data => {
+          setPokemon(data)
+        })
     }
 
     return () => controller.abort();
@@ -35,6 +39,7 @@ const App = () => {
     <div className="container">
       <h1> <span>Search Engine</span> whit <span>Debounce Effect</span> </h1>
       <Form {...{ value, onChange }} />
+      <Pokemon pokemon={pokemon}/>
     </div>
   )
 }
