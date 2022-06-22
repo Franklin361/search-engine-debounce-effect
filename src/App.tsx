@@ -4,24 +4,16 @@ import { searchPokemon } from "./utils/searchPokemon";
 import { ResponseAPI } from "./interface/pokemon";
 import { Pokemon } from "./components/Pokemon";
 import { useInput } from "./hooks/useInput";
-
-const delay = 1000; // 1s
+import { useDebounce } from "./hooks/useDebounce";
 
 const App = () => {
+
+  const [value, onChange] = useInput();
+  const debouncedValue = useDebounce(value, 1000);
 
   const [pokemon, setPokemon] = useState<ResponseAPI | null>({} as ResponseAPI);
   const [isLoading, setIsLoading] = useState(false)
 
-  const [value, onChange] = useInput()
-
-  const [debouncedValue, setDebouncedValue] = useState(value);
-
-  useEffect(() => {
-
-    const timer = setTimeout(() => setDebouncedValue(value), delay || 500)
-
-    return () => clearTimeout(timer)
-  }, [value, delay]);
 
   useEffect(() => {
     const controller = new AbortController();
