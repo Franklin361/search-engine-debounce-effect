@@ -1,8 +1,9 @@
 import { Form } from "./components/Form"
 import { useEffect, useState } from 'react';
+import { searchPokemon } from "./utils/searchPokemon";
 
 const delay = 1000; // 1s
-
+const controller = new AbortController();
 const App = () => {
 
   const [value, setValue] = useState('');
@@ -17,6 +18,18 @@ const App = () => {
     return () => clearTimeout(timer)
   }, [value, delay]);
 
+  useEffect(() => {
+    if (debouncedValue) {
+      searchPokemon(debouncedValue, controller.signal)
+        .then( pokemon =>  {
+           if(pokemon){
+             // TODO: agregar el pokemon al estado
+           }
+        })
+    }
+
+    return () => controller.abort();
+  }, [debouncedValue])
 
 
   return (
