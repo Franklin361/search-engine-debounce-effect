@@ -14,6 +14,7 @@ body {
 main {
   display: block;
   max-width: 1000px;
+  width: 60%;
   margin: 1em auto;
   min-height: 70vh;
 }
@@ -76,20 +77,18 @@ main > .loading {
   animation: fadeIn .5s linear infinite alternate;
   color: slateblue;
 }
-main > .no-results {
-}
-
 .pokemon{
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
   text-align: center;
   border-radius: 5px;
   width: fit-content;
   overflow: hidden;
   position: relative;
   padding: 1em 2em;
-  margin: 2rem auto;
+  margin: 1rem auto;
   animation: fadeInUp .3s ease-in;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
 }
@@ -98,9 +97,10 @@ main > .no-results {
 }
 
 .pokemon > img {
-  min-height: 150px;
-  min-width: 150px;
+  height: 200px;
+  width: 200px;
   vertical-align: top;
+  object-fit: cover;
 }
 .pokemon::before{
   content: "";

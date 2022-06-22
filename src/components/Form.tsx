@@ -1,4 +1,3 @@
-import { useState } from 'react';
 
 interface Props {
    value: string;
@@ -9,7 +8,7 @@ export const Form = ({ onChange, value }:Props) => {
 
   return (
     <>
-        <label htmlFor="pokemon">Name of a Pokemon</label>
+        <label htmlFor="pokemon">Name or ID of a Pokemon</label>
         <input 
           type="text" 
           id="pokemon" 
