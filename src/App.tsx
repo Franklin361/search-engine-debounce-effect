@@ -17,7 +17,7 @@ const App = () => {
       <Form {...{ value, onChange }} />
       {
         isLoading 
-          ? <span>Loading Results...</span>
+          ? <span className="loading">Loading Results...</span>
           : <Pokemon pokemon={pokemon}/>
       }
     </main>
