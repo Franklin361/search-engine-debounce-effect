@@ -17,7 +17,7 @@ export const useSearchPokemon = (search: string) => {
                     setPokemon(data);
                     setIsLoading(false);
                 })
-        }
+        }else { setPokemon({} as ResponseAPI) }
 
         return () => controller.abort();
     }, [search])

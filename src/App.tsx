@@ -12,7 +12,7 @@ const App = () => {
 
 
   return (
-    <div className="container">
+    <main>
       <h1> <span>Search Engine</span> whit <span>Debounce Effect</span> </h1>
       <Form {...{ value, onChange }} />
       {
@@ -20,7 +20,7 @@ const App = () => {
           ? <span>Loading Results...</span>
           : <Pokemon pokemon={pokemon}/>
       }
-    </div>
+    </main>
   )
 }
 export default App
