@@ -8,8 +8,8 @@ export const Pokemon = ({ pokemon }: { pokemon: ResponseAPI | null }) => {
     <>
       {
         !pokemon
-          ? <span>No results</span>
-          : <div>
+          ? <span className="no-results">No results</span>
+          : <div className="pokemon">
             <h3>{pokemon.name}</h3>
             <img src={pokemon.sprites.front_default} alt={pokemon.name} />
           </div>
