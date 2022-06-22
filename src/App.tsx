@@ -1,10 +1,13 @@
 import { Form } from "./components/Form"
 import { useEffect, useState } from 'react';
 import { searchPokemon } from "./utils/searchPokemon";
+import { ResponseAPI } from "./interface/pokemon";
 
 const delay = 1000; // 1s
 const controller = new AbortController();
 const App = () => {
+
+  const [pokemon, setPokemon] = useState<ResponseAPI | null>(null)
 
   const [value, setValue] = useState('');
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value);
@@ -21,11 +24,7 @@ const App = () => {
   useEffect(() => {
     if (debouncedValue) {
       searchPokemon(debouncedValue, controller.signal)
-        .then( pokemon =>  {
-           if(pokemon){
-             // TODO: agregar el pokemon al estado
-           }
-        })
+        .then(data => setPokemon(data))
     }
 
     return () => controller.abort();
