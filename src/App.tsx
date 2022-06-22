@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { searchPokemon } from "./utils/searchPokemon";
 import { ResponseAPI } from "./interface/pokemon";
 import { Pokemon } from "./components/Pokemon";
+import { useInput } from "./hooks/useInput";
 
 const delay = 1000; // 1s
 
@@ -11,8 +12,7 @@ const App = () => {
   const [pokemon, setPokemon] = useState<ResponseAPI | null>({} as ResponseAPI);
   const [isLoading, setIsLoading] = useState(false)
 
-  const [value, setValue] = useState('');
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value);
+  const [value, onChange] = useInput()
 
   const [debouncedValue, setDebouncedValue] = useState(value);
 
