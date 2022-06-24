@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`📂 App.tsx 🟣 Should match the snapshot 1`] = `
+<div>
+  <main>
+    <h1>
+       
+      <span>
+        Search Engine
+      </span>
+       whit 
+      <span>
+        Debounce Effect
+      </span>
+       
+    </h1>
+    <label
+      for="pokemon"
+    >
+      Name or ID of a Pokemon
+    </label>
+    <input
+      id="pokemon"
+      placeholder="Example: Pikachu"
+      type="text"
+      value=""
+    />
+  </main>
+</div>
+`;
