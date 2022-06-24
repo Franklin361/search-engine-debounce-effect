@@ -46,4 +46,8 @@
 
 Demo of the app 🔗 [https://search-engine-debounce.netlify.app](https://search-engine-debounce.netlify.app/)
 
-Link to tutorial post 🔗 [How to make a search engine with debounde effect?]() 
+### Here's the link to the tutorial in case you'd like to take a look at it! 👀
+
+- 🔗 Article in English 🇺🇸 https://dev.to/franklin030601/how-to-create-a-search-engine-with-debounce-effect-4hef
+
+- 🔗 Article in Spanish 🇲🇽 https://dev.to/franklin030601/como-crear-un-buscador-con-efecto-debounce-4jcp
