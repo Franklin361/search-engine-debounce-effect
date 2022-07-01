@@ -4,7 +4,7 @@
 
 <br/>
 
-![Page](https://res.cloudinary.com/dnxchppfm/image/upload/v1655922188/posts/search-debounce_jkbgvl.gif)
+![Page](https://res.cloudinary.com/dnxchppfm/image/upload/v1656686361/posts/search-debounce/aaa_wcxo6p.gif)
 
 <br/>
 

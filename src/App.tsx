@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <main>
-      <h1> <span>Search Engine</span> whit <span>Debounce Effect</span> </h1>
+      <h1> <span>Search Engine</span> with <span>Debounce Effect</span> </h1>
       <Form {...{ value, onChange }} />
       {
         isLoading 
